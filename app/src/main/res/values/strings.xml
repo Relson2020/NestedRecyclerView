@@ -3,4 +3,6 @@
     <string name="name">Name</string>
     <string name="phoneNumber">Phone number</string>
     <string name="email">Email address</string>
+    <string name="relinns">Relinns</string>
+    <string name="oreder_status">Order status : Pending</string>
 </resources>

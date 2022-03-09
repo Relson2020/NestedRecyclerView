@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <data>
+        <variable
+            name="data"
+            type="com.example.recyclerandpaging.view.ParentViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,12 +14,14 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="24sp"
-        android:text="Relinns"/>
+        android:text="@string/relinns"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"
@@ -22,6 +29,7 @@
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="200dp"
+        android:adapter="@{data.adapter}"
         android:nestedScrollingEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,12 +40,22 @@
         android:id="@+id/tvOrderStatus"
         android:layout_width="wrap_content"
         android:layout_marginTop="5dp"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rvItems"
         android:textSize="24sp"
-        android:text="Order status : Pending"/>
+        android:text="@string/oreder_status"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderStatus"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
